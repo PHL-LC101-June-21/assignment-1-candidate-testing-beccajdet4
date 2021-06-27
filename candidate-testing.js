@@ -48,22 +48,23 @@ let grade = 0;
 
 for (let i = 0; i < 5; i++) {
     if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
-      console.log("\ncorrect answer");
+      //console.log("\ncorrect answer");
       grade = grade +1;
   } else {
-    console.log("\nX incorrect answer");
+    //console.log("\nincorrect answer");
     grade = grade + 0;
   } 
-  console.log("Total Points: " + grade);
+  //console.log("Total Points: " + grade);
   }
 
 let candidateScore = ((grade /5) * 100);
-  console.log(candidateScore);
+  //console.log(candidateScore);
+console.log("\n>>> Overall Grade: " + candidateScore + "%" + ` (${grade} out of 5 responses correct) <<<`);
 
 if (candidateScore >= 80) {
-  console.log(">>> Overall Grade: " + candidateScore + "% <<<" + "\n>>> Status: PASSED <<< ");  
+  console.log(">>> Status: PASSED <<<");
 } else {
-  console.log(">>> Overall Grade: " + candidateScore + "% <<<" + "\n>>> Status: FAILED <<<");
+  console.log(">>> Status: FAILED <<<");
 }
 
 }
