@@ -10,10 +10,10 @@ let correctAnswer = "Sally Ride";
 let candidateAnswer = "";
 let questions = [
   "1) Who was the first American woman in space? " ,  
-  "2) True or false: 5 kilometer == 5000 meters? " , 
-  "3) (5 + 3)/2 * 10 = ? " , 
-  "4) Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? " , 
-  "5) What is the minimum crew size for the ISS? "
+  "\n2) True or false: 5 kilometer == 5000 meters? ", 
+  "\n3) (5 + 3)/2 * 10 = ? ", 
+  "\n4) Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", 
+  "\n5) What is the minimum crew size for the ISS? "
   ];
 let correctAnswers = [
   "Sally Ride", 
@@ -28,11 +28,6 @@ let candidateAnswers = []
 function askForName(){
   // TODO 1.1b: Ask for candidate's name //
 candidateName = input.question("Candidate Name: ");
-yourAnswer1 = input.question("1) Who was the first American woman in space?");
-yourAnswer2 = input.question("2) True or false: 5 kilometer == 5000 meters?");
-yourAnswer3 = input.question("3) (5 + 3)/2 * 10 = ?");
-yourAnswer4 = input.question("4) Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ");
-yourAnswer5 = input.question("5) What is the minimum crew size for the ISS? ");
 }
 
 
@@ -40,9 +35,10 @@ function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 
 for (let i = 0; i < 5; i++) {
-   candidateAnswers.push(yourAnswer1, yourAnswer2, yourAnswer3, yourAnswer4, yourAnswer5);
-   (console.log("\n" + questions[i] + "\nYour Answer:", candidateAnswers[i] + "\nCorrect Answer:", correctAnswers[i], "\n"));
- } 
+  yourAnswers = input.question(questions[i]);
+  candidateAnswers.push(yourAnswers);
+   console.log(`Your Answer: ${candidateAnswers[i]}` + `\nCorrect Answer: ${correctAnswers[i]}`);
+   }
 }
 
 function gradeQuiz(candidateAnswers) {
@@ -51,11 +47,11 @@ function gradeQuiz(candidateAnswers) {
 let grade = 0;
 
 for (let i = 0; i < 5; i++) {
-    if (candidateAnswers[i] === correctAnswers[i]) {
-    console.log("correct answer");
-    grade = grade +1;
+    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+      console.log("\ncorrect answer");
+      grade = grade +1;
   } else {
-    console.log("incorrect answer");
+    console.log("\nX incorrect answer");
     grade = grade + 0;
   } 
   console.log("Total Points: " + grade);
