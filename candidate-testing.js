@@ -48,17 +48,13 @@ let grade = 0;
 
 for (let i = 0; i < 5; i++) {
     if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
-      //console.log("\ncorrect answer");
       grade = grade +1;
   } else {
-    //console.log("\nincorrect answer");
     grade = grade + 0;
   } 
-  //console.log("Total Points: " + grade);
   }
 
 let candidateScore = ((grade /5) * 100);
-  //console.log(candidateScore);
 console.log("\n>>> Overall Grade: " + candidateScore + "%" + ` (${grade} out of 5 responses correct) <<<`);
 
 if (candidateScore >= 80) {
@@ -66,6 +62,7 @@ if (candidateScore >= 80) {
 } else {
   console.log(">>> Status: FAILED <<<");
 }
+
 return candidateScore;
 
 }
@@ -76,6 +73,7 @@ function runProgram() {
 
   askQuestion();
   gradeQuiz(this.candidateAnswers);
+
 }
 
 // Don't write any code below this line //
