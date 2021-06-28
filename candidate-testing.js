@@ -66,6 +66,7 @@ if (candidateScore >= 80) {
 } else {
   console.log(">>> Status: FAILED <<<");
 }
+return candidateScore;
 
 }
 function runProgram() {
